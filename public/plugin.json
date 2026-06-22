@@ -1,0 +1,59 @@
+{
+  "$schema": "node_modules/@ztools-center/ztools-api-types/resource/ztools.schema.json",
+  "name": "c4b20e9c-d92b-4820-b430-28f936b8a44b",
+  "title": "ZSnip",
+  "description": "ZSnip（妙截 ZTools）是一款专为 ZTOOLS 桌面工具箱生态打造的轻量级、高性能屏幕截取与标注插件。基于 Electron + React 18 + TypeScript 构建，深度集成 ZTOOLS 主程序，提供从唤起、框选、标注到导出的一站式截图解决方案。",
+  "author": "blankls",
+  "version": "1.0.0",
+  "main": "index.html",
+  "preload": "preload/services.js",
+  "logo": "logo.png",
+  "development": {
+    "main": "http://localhost:5173"
+  },
+  "features": [
+    {
+      "code": "hello",
+      "explain": "这是插件应用的第一个功能",
+      "icon": "logo.png",
+      "cmds": [
+        "你好",
+        "hello"
+      ]
+    },
+    {
+      "code": "read",
+      "explain": "功能指令+匹配指令示例，使用 node.js 能力读文件",
+      "icon": "logo.png",
+      "cmds": [
+        "读文件",
+        {
+          "type": "files",
+          "fileType": "file",
+          "maxLength": 1,
+          "label": "读文件"
+        }
+      ]
+    },
+    {
+      "code": "write",
+      "explain": "匹配指令示例，使用 node.js 能力写文件",
+      "icon": "logo.png",
+      "mainHide": true,
+      "cmds": [
+        {
+          "type": "over",
+          "label": "保存为文件"
+        },
+        {
+          "type": "img",
+          "label": "保存为文件"
+        }
+      ]
+    }
+  ],
+  "platform": [
+    "darwin",
+    "win32"
+  ]
+}
