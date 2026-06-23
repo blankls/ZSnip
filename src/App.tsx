@@ -17,6 +17,18 @@ export default function App() {
     })
   }, [])
 
+  // 截图路由：不在插件窗口内渲染，而是请求主进程创建全屏透明 overlay 窗口
+  useEffect(() => {
+    if (route === 'screenshot') {
+      window.services.openScreenshotOverlay().then((result) => {
+        if (!result.success) {
+          console.error('[ZSnip] 无法创建全屏截图窗口:', result.error)
+        }
+        window.ztools.outPlugin()
+      })
+    }
+  }, [route])
+
   if (route === 'hello') return <Hello enterAction={enterAction} />
   if (route === 'read') return <Read enterAction={enterAction} />
   if (route === 'write') return <Write enterAction={enterAction} />

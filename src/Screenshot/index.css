@@ -1,0 +1,10 @@
+.screenshot-overlay { position: fixed; inset: 0; z-index: 9998; cursor: crosshair; }
+.screenshot-overlay canvas { display: block; position: absolute; top: 0; left: 0; }
+.overlay-hint { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); color: #fff; font-size: 13px; padding: 6px 16px; background: rgba(0,0,0,0.6); border-radius: 20px; pointer-events: none; z-index: 10000; }
+.size-tooltip { position: fixed; color: #fff; font-size: 12px; padding: 2px 8px; background: rgba(0,0,0,0.7); border-radius: 4px; pointer-events: none; z-index: 10000; white-space: nowrap; }
+/* 窗口标题浮层 */
+.window-label { position: fixed; color: #fff; font-size: 12px; padding: 3px 8px; background: #3b82f6; border-radius: 4px; pointer-events: none; z-index: 10001; white-space: nowrap; max-width: 300px; overflow: hidden; text-overflow: ellipsis; }
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay-hint { transition: none !important; }
+}

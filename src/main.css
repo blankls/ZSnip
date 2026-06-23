@@ -1,59 +1,47 @@
+/* ZSnip 截图插件 - 设计令牌 */
+
 :root {
-  --blue: rgb(88, 164, 246);
-  --light: #fff;
+  --brand-blue: #3b82f6; --brand-cyan: #06b6d4;
+  --bg-dark: #1e293b; --bg-light: #f8fafc; --bg-overlay: rgba(0,0,0,0.35);
+  --color-success: #10b981; --color-warning: #f59e0b; --color-danger: #ef4444;
+  --text-primary: #ffffff; --text-secondary: #94a3b8; --text-muted: #64748b;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-size-title: 14px; --font-size-body: 13px; --font-size-aux: 11px;
+  --radius-toolbar: 10px; --radius-button: 8px; --radius-card: 12px; --radius-circle: 50%;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-toolbar: 0 4px 20px rgba(0,0,0,0.15);
+  --shadow-popup: 0 10px 40px rgba(0,0,0,0.1);
+  --transition-fast: 100ms ease; --transition-normal: 200ms ease;
 }
 
-html,
-body {
+* { box-sizing: border-box; }
+
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  user-select: none;
+  background: transparent !important;
 }
+
+input, textarea { background: transparent; outline: none; }
 
 button {
   border: none;
-  background: none var(--blue);
-  color: var(--light);
-  line-height: 2.5;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: opacity var(--transition-normal);
 }
 
-button:disabled {
-  filter: grayscale(1);
-  cursor: not-allowed;
-}
-
-button:not(:disabled):active {
-  opacity: 0.6;
-}
-
-textarea {
-  display: block;
-  margin: 0;
-}
+button:disabled { filter: grayscale(1); cursor: not-allowed; }
+button:not(:disabled):active { opacity: 0.6; }
 
 @media (prefers-color-scheme: light) {
-  body {
-    background-color: #f4f4f4;
-  }
-  ::-webkit-scrollbar-track-piece {
-    background-color: #f4f4f4;
-  }
-  ::-webkit-scrollbar-thumb {
-    border-color: #f4f4f4;
-  }
+  body { background-color: transparent !important; }
 }
-
 @media (prefers-color-scheme: dark) {
-  &::-webkit-scrollbar-track-piece {
-    background-color: #303133;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #666;
-    border-color: #303133;
-  }
-  body {
-    background-color: #303133;
-    color: #fff;
-  }
+  body { background-color: transparent !important; }
 }
