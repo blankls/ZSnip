@@ -17,10 +17,14 @@ export default function App() {
     })
   }, [])
 
-  // 截图路由：不在插件窗口内渲染，而是请求主进程创建全屏透明 overlay 窗口
+  // 截图路由：不在插件窗口内渲染，而是使用 ZTools 官方 API 创建全屏透明 overlay 窗口
   useEffect(() => {
     if (route === 'screenshot') {
-      window.services.openScreenshotOverlay().then((result) => {
+      // 获取 overlay.html 的 URL
+      const overlayUrl = window.ztools.isDev()
+        ? 'http://localhost:5173/public/overlay.html'
+        : './public/overlay.html'
+      window.services.createOverlayWindow(overlayUrl).then((result) => {
         if (!result.success) {
           console.error('[ZSnip] 无法创建全屏截图窗口:', result.error)
         }

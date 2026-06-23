@@ -1,11 +1,12 @@
 {
-  "name": "c4b20e9c-d92b-4820-b430-28f936b8a44b",
-  "version": "1.0.0",
+  "name": "zsnip",
+  "version": "1.0.2",
   "description": "ZSnip（妙截 ZTools）是一款专为 ZTOOLS 桌面工具箱生态打造的轻量级、高性能屏幕截取与标注插件。基于 Electron + React 18 + TypeScript 构建，深度集成 ZTOOLS 主程序，提供从唤起、框选、标注到导出的一站式截图解决方案。",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "package": "node scripts/package.js"
   },
   "dependencies": {
     "react": "^19.0.0",
