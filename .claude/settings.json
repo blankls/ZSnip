@@ -3,7 +3,12 @@
     "PostToolUse": [
       {
         "matcher": "Write|Edit|MultiEdit",
-        "command": "codegraph sync"
+        "hooks": [
+          {
+            "type": "command",
+            "command": "codegraph sync"
+          }
+        ]
       }
     ]
   },
