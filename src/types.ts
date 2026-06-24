@@ -1,6 +1,6 @@
 // ZSnip 截图插件 - 类型定义
 
-export type ToolType = 'rect' | 'circle' | 'arrow' | 'line' | 'pen' | 'text' | 'mosaic' | null
+export type ToolType = 'rect' | 'circle' | 'arrow' | 'pen' | 'text' | 'mosaic' | null
 
 export interface Point { x: number; y: number }
 
@@ -15,7 +15,6 @@ export interface ScreenshotConfig {
   strokeWidth: number
   fontSize: number
   mosaicSize: number
-  lineDash: boolean
 }
 
 export interface WindowInfo {
